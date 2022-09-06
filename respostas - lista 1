@@ -22,6 +22,82 @@
 // Questao 03 
 // a = 11, b = 20, c = 10.
 
+// Questão 04
 
+
+#include <stdio.h>
+#include <math.h>
+
+void calcula_hexagono(float l, float *area, float *perimetro){
+	// calculo da area e perimetro, para isso foram usados ponteiros
+	*area = 3 * pow(l, 2) * sqrt(3) / 2; 
+    *perimetro = 6 * l;
+}
+
+int main(){
+	
+	// aplicando na int main
+   
+  float l, area, perimetro;
+  
+    // lendo os lados (l) 
+	  
+  printf("Digite os lados");
+  scanf("%f", &l);
+	
+	// imprimindo o resultado 
+	
+  calcula_hexagono(l, &area, &perimetro);
+  printf("A area do hexagono : %.2f \n O perimetro do hexagono %.2f", area, perimetro); 
+   	
+return 0;
+}
+
+
+// Questao 05 
+
+#include <stdio.h>
+
+void situacao(float p1, float p2, float p3, int faltas, int aulas , float *media){
+               // calculo da media dos alunos, usando um ponteiro
+	          *media = (p1+p2+p3)/3;
+               // if usado para saber se o aluno foi aprovado ou nao
+if ((faltas > 0.25*aulas) && ((media>=60) || (media<60))){
+				  printf("reprovado por falta\n");
+				   } 
+			    else if((faltas <= 0.25*aulas) && (media>=60)) {
+				    printf("Aprovado \n");
+				} 
+				  else {
+				     	printf("Reprovado \n");
+			        	}
+ }
+
+
+int main(){
+int aulas, faltas;
+float media;
+float p1,p2,p3;
+// lendo as notas
+printf("Digite as notas : \n");
+	          scanf("%f \n", &p1);
+	           scanf("%f \n", &p2);
+	            scanf("%f \n", &p3);
+// lendo as faltas e aulas
+	            
+printf("Numero de faltas : \n");
+scanf("%d", &faltas);
+printf("Numero de aulas");
+scanf("%d", &aulas);
+
+
+ // chamando a funcao situacao         
+ situacao(p1,p2,p3,faltas,aulas,&media);
+ // imprimindo a media	
+ printf("A media foi : %.1f", media);
+
+return 0;
+
+}
 
 
